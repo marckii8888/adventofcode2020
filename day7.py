@@ -1,24 +1,5 @@
 from string import digits
 
-class Tree:
-    def __init__(self,data, children=[]):
-        self.children = children
-        self.data = data
-    def __str__(self, level=0):
-        ret = "\t"*level+repr(self.data)+"\n"
-        for child in self.children:
-            ret += child.__str__(level+1)
-        return ret
-
-    def __repr__(self):
-        return '<tree node representation>'
-
-'''
-l = Tree('name')
-r = Tree('name')
-root = Tree('root')
-root.children = [l,r]
-'''
 def solution(tree_dict, target):
     secondary = []
     found = []
