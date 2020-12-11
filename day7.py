@@ -50,9 +50,10 @@ for line in f.readlines():
     parent = parent.replace('bags','').replace('bag','').strip()
     child = child.split(',')
     child = [ele.strip() for ele in child]
+# For solution 1
 #    child = [ele.translate(str.maketrans('', '', digits)).replace('bags', '').replace('bag','').strip() for ele in child]
-    child = [ele.replace('bags','').replace('bag', '').strip() for ele in child]
+    # For solution 2
+child = [ele.replace('bags','').replace('bag', '').strip() for ele in child]
     tree_dict.update({parent: child})
 #print(solution(tree_dict, 'shiny gold'))
-print(tree_dict)
 print(solution2(tree_dict, 'shiny gold'))

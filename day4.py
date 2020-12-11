@@ -30,8 +30,7 @@ def helper(d):
                 return False
         if(key=='hgt'):
             try:
-                unit = val[-2:0]
-                print(unit)
+                unit = val[-2:]
                 height = int(val[:-2])
                 if(unit == 'cm'):
                     if(height>=150 and height<=193):
@@ -55,6 +54,8 @@ def helper(d):
                         continue
                     else:
                         return False
+                else:
+                    return False
             except:
                 return False
         if(key=='ecl'):
@@ -81,15 +82,15 @@ def newsolution(arr):
         l1.sort()
         if(l1 == fields):
             if(helper(d)):
+                print(f'This returns True: {d}')
                 res+=1
-                print(f'valid = {d}')
                 continue
             else:
                 continue
         elif(l1 == optional):
             if(helper(d)):
+                print(f'This returns True: {d}')
                 res+=1
-                print(f'valid = {d}')
                 continue
             else:
                 continue
@@ -98,7 +99,7 @@ def newsolution(arr):
     return res
 
 
-f = open("passwords.txt", "r")
+f = open("q4.txt", "r")
 passports = f.readlines()
 filtered = []
 res = {}
@@ -111,9 +112,7 @@ for line in passports:
         for field in l:
             key,val = field.split(':')
             res.update({key:val})
-
-for key in filtered:
-    print(key)
+filtered.append(res)
 
 print(newsolution(filtered))
 #print(solution(passports)) # Answer = 2

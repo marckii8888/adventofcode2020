@@ -42,5 +42,6 @@ for line in f.readlines():
         x.append(list(line)[:-1])
 x.append(list(line))
 arr.append(x)
-print(solution2(arr))
+print(arr)
+#print(solution2(arr))
 
